@@ -31,22 +31,7 @@ const CarCard = ({ car }) => {
           </div>
 
           <div className="flex items-center justify-between text-sm text-neutral pt-4 border-t border-neutral-light">
-            {/* <span className="flex items-center gap-1">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-              {car.mileage}
-            </span> */}
+          
             <span className="text-accent font-semibold group-hover:gap-2 flex items-center transition-all">
               View Details
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
