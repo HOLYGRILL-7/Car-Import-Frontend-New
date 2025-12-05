@@ -8,7 +8,11 @@ import {
   Award,
   Shield,
   Clock,
-  CheckCircle, Trophy, Star, Calendar, ArrowRight
+  CheckCircle,
+  Trophy,
+  Star,
+  Calendar,
+  ArrowRight,
 } from "lucide-react";
 
 // Import images
@@ -34,10 +38,9 @@ import Nissan from "../assets/CarLogo/Nissan.png";
 import Daewoo from "../assets/CarLogo/Daewoo.png";
 import Chev from "../assets/CarLogo/chev.png";
 
-import Lexus from "../assets/CarOfTheYear/Lexus.jpg"
-import Mazda from "../assets/CarOfTheYear/Mazda.jpg"
-import Tahoe from "../assets/CarOfTheYear/ChevTahoe.jpg"
-
+import Lexus from "../assets/CarOfTheYear/Lexus.jpg";
+import Mazda from "../assets/CarOfTheYear/Mazda.jpg";
+import Tahoe from "../assets/CarOfTheYear/ChevTahoe.jpg";
 
 import fire_flame from "../assets/Icons/fire-flame.png";
 
@@ -421,70 +424,76 @@ export const whyChooseUs = [
 ];
 
 export const winners = [
-    {
-      category: "Best Overall",
-      car: "Lexus ES 350",
-      image: Lexus,
-      icon: Trophy,
-      description: "Unmatched reliability and luxury combined"
-    },
-    {
-      category: "Best Design",
-      car: "Mazda CX-90",
-      image: Mazda,
-      icon: Star,
-      description: "Stunning aesthetics meet exceptional performance"
-    },
-    {
-      category: "Best SUV",
-      car: "Chevrolet Tahoe",
-      image: Tahoe,
-      icon: Award,
-      description: "Power, space, and capability redefined"
-    }
-  ];
+  {
+    category: "Best Overall",
+    car: "Lexus ES 350",
+    image: Lexus,
+    icon: Trophy,
+    description: "Unmatched reliability and luxury combined",
+  },
+  {
+    category: "Best Design",
+    car: "Mazda CX-90",
+    image: Mazda,
+    icon: Star,
+    description: "Stunning aesthetics meet exceptional performance",
+  },
+  {
+    category: "Best SUV",
+    car: "Chevrolet Tahoe",
+    image: Tahoe,
+    icon: Award,
+    description: "Power, space, and capability redefined",
+  },
+];
 
-  export const latestReviews = [
-    {
-      image: Lexus,
-      title: "2025 Lexus ES 350 Full Review Feedback",
-      excerpt: "The Lexus ES 350 continues to set the standard for midsize luxury sedans with refined comfort and cutting-edge technology.",
-      date: "Nov 25, 2024",
-      rating: 9.2
-    },
-    {
-      image: Mazda,
-      title: "Mazda CX-90: The Premium SUV Surprise",
-      excerpt: "Mazda's flagship SUV impresses with upscale materials, smooth powertrain options, and that signature driving feel.",
-      date: "Nov 22, 2024",
-      rating: 8.8
-    },
-    {
-      image: Tahoe,
-      title: "Chevrolet Tahoe: Family Adventure Champion",
-      excerpt: "With massive cargo space and powerful engine options, the Tahoe remains the king of full-size SUVs for families.",
-      date: "Nov 20, 2024",
-      rating: 8.5
-    },
-    {
-      image: Lexus,
-      title: "Luxury Sedan Shootout 2025",
-      excerpt: "We compare the top luxury sedans to find which offers the best value, performance, and prestige.",
-      date: "Nov 18, 2024",
-      rating: 9.0
-    },
-    {
-      image: Mazda,
-      title: "Best Three-Row SUVs of 2025",
-      excerpt: "From budget-friendly to luxury, we rank the top three-row SUVs for families who need space without compromise.",
-      date: "Nov 15, 2024",
-      rating: 8.7
-    },
-    {
-      image: Tahoe,
-      title: "Off-Road Capability Test: Full-Size SUVs",
-      excerpt: "Taking America's largest SUVs off the beaten path to see which handles tough terrain with confidence.",
-      date: "Nov 12, 2024",
-      rating: 9.1
-    }
-  ];
+export const latestReviews = [
+  {
+    image: Lexus,
+    title: "2025 Lexus ES 350 Full Review Feedback",
+    excerpt:
+      "The Lexus ES 350 continues to set the standard for midsize luxury sedans with refined comfort and cutting-edge technology.",
+    date: "Nov 25, 2024",
+    rating: 9.2,
+  },
+  {
+    image: Mazda,
+    title: "Mazda CX-90: The Premium SUV Surprise",
+    excerpt:
+      "Mazda's flagship SUV impresses with upscale materials, smooth powertrain options, and that signature driving feel.",
+    date: "Nov 22, 2024",
+    rating: 8.8,
+  },
+  {
+    image: Tahoe,
+    title: "Chevrolet Tahoe: Family Adventure Champion",
+    excerpt:
+      "With massive cargo space and powerful engine options, the Tahoe remains the king of full-size SUVs for families.",
+    date: "Nov 20, 2024",
+    rating: 8.5,
+  },
+  {
+    image: Lexus,
+    title: "Luxury Sedan Shootout 2025",
+    excerpt:
+      "We compare the top luxury sedans to find which offers the best value, performance, and prestige.",
+    date: "Nov 18, 2024",
+    rating: 9.0,
+  },
+  {
+    image: Mazda,
+    title: "Best Three-Row SUVs of 2025",
+    excerpt:
+      "From budget-friendly to luxury, we rank the top three-row SUVs for families who need space without compromise.",
+    date: "Nov 15, 2024",
+    rating: 8.7,
+  },
+  {
+    image: Tahoe,
+    title: "Off-Road Capability Test: Full-Size SUVs",
+    excerpt:
+      "Taking America's largest SUVs off the beaten path to see which handles tough terrain with confidence.",
+    date: "Nov 12, 2024",
+    rating: 9.1,
+  },
+];

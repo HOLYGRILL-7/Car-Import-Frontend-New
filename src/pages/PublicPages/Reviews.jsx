@@ -1,21 +1,20 @@
-import React from 'react'
-import { latestReviews, winners } from '../../data/carsData';
+import React from "react";
+import { latestReviews, winners } from "../../data/carsData";
 import redCar_front from "../../assets/Images/redCar-frontside.png";
 import whiteCar_front from "../../assets/Images/whiteCar-frontside.png";
-import { Trophy, ArrowRight, Calendar, Star } from 'lucide-react';
+import { Trophy, ArrowRight, Calendar, Star } from "lucide-react";
 
 const Reviews = () => {
-    const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-<div className="min-h-screen bg-neutral-light">
+    <div className="min-h-screen bg-neutral-light">
       <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Hero Section */}
-       <div className="inner-div">
+        <div className="inner-div">
           <div className="hero-section w-full p-20 bg-linear-to-b from bg-neutral-dark via-neutral to-bg-neutral-light h-[390px] shadow-2xl rounded-2xl px-14 grid grid-cols-2">
             <h1 className="font-bold text-8xl z-20 col-span-2 flex justify-center items-center gap-10  text-accent">
-              CAR <span>REVIEWS</span> 
+              CAR <span>REVIEWS</span>
             </h1>
           </div>
           <div className="front redCar absolute right-8 top-14 z-10">
@@ -29,7 +28,6 @@ const Reviews = () => {
         {/* Award Winning Cars Section */}
         <div className="bg-white rounded-3xl mt-10 shadow-xl p-8 md:p-12 mb-12">
           <div className="grid md:grid-cols-3 gap-8">
-            
             {/* Text Side */}
             <div className="md:col-span-1 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
@@ -37,13 +35,15 @@ const Reviews = () => {
                   <Trophy className="w-4 h-4" />
                   {year} CAR OF THE YEAR AWARDS
                 </div>
-                
+
                 <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
                   AND THE WINNERS ARE...
                 </h2>
-                
+
                 <p className="text-lg text-neutral leading-relaxed">
-                  ...Discover our expert picks for the best cars of {year} across multiple categories, tested and reviewed by our team of automotive specialists.
+                  ...Discover our expert picks for the best cars of {year}{" "}
+                  across multiple categories, tested and reviewed by our team of
+                  automotive specialists.
                 </p>
               </div>
 
@@ -72,19 +72,20 @@ const Reviews = () => {
                   {/* Content */}
                   <div className="p-5 space-y-6">
                     <div className="flex items-center gap-2 text-accent">
-                      <winner.icon className='w-6 h-6'/>
-                      <span className="text-xs font-bold uppercase tracking-wide">{winner.category}</span>
+                      <winner.icon className="w-6 h-6" />
+                      <span className="text-xs font-bold uppercase tracking-wide">
+                        {winner.category}
+                      </span>
                     </div>
 
                     <div className="description space-y-5">
                       <h3 className="text-xl font-bold text-primary ">
-                      {winner.car}
-                    </h3>
-                    <p className="text-md text-neutral leading-relaxed">
-                      {winner.description}
-                    </p>
+                        {winner.car}
+                      </h3>
+                      <p className="text-md text-neutral leading-relaxed">
+                        {winner.description}
+                      </p>
                     </div>
-                    
                   </div>
                 </div>
               ))}
@@ -95,9 +96,12 @@ const Reviews = () => {
         {/* Latest Reviews Section */}
         <div className="py-12">
           <div className="text-center mb-12 space-y-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">Latest Reviews</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary">
+              Latest Reviews
+            </h2>
             <p className="text-xl text-neutral max-w-2xl mx-auto">
-              Expert analysis, in-depth testing, and comprehensive car reviews from our team
+              Expert analysis, in-depth testing, and comprehensive car reviews
+              from our team
             </p>
             <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
           </div>
@@ -110,8 +114,8 @@ const Reviews = () => {
               >
                 {/* Image */}
                 <div className="h-56 bg-neutral-dark overflow-hidden">
-                  <img 
-                    src={review.image} 
+                  <img
+                    src={review.image}
                     alt={review.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -133,7 +137,7 @@ const Reviews = () => {
                   <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors leading-tight">
                     {review.title}
                   </h3>
-                  
+
                   <p className="text-neutral leading-relaxed line-clamp-2">
                     {review.excerpt}
                   </p>
@@ -154,9 +158,9 @@ const Reviews = () => {
             </button>
           </div>
         </div>
-
       </div>
-    </div>  )
-}
+    </div>
+  );
+};
 
-export default Reviews
+export default Reviews;

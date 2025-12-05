@@ -10,6 +10,7 @@ import UsedCars from "./pages/PublicPages/UsedCars";
 import NewCars from "./pages/PublicPages/NewCars";
 import Services from "./pages/PublicPages/Services";
 import Reviews from "./pages/PublicPages/Reviews";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const location = useLocation();
@@ -34,6 +35,8 @@ const App = () => {
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Route>
       </Routes>
+      <Footer />
+
     </div>
   );
 };
