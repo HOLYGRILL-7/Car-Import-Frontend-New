@@ -6,17 +6,15 @@ import Footer from "../components/Footer/Footer";
 const Layout = () => {
   const location = useLocation();
 
-  const hideNavbar =
-    location.pathname === "/login" || location.pathname === "/register";
-  
+  // Optional: Hide footer on services page
   const hideFooter = location.pathname === "/services";
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {!hideNavbar && <Navbar />}
+      <Navbar />
 
       <main className="flex-1">
-        <Outlet /> {/* ← Changed from {children} */}
+        <Outlet />
       </main>
 
       {!hideFooter && <Footer />}

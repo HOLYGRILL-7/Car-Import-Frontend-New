@@ -13,4 +13,5 @@ const FooterContact = ({ email, phone, address }) => {
   );
 };
 
-export default FooterContact;''
+export default FooterContact;
+("");

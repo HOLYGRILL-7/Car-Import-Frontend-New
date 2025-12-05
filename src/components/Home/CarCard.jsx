@@ -31,7 +31,6 @@ const CarCard = ({ car }) => {
           </div>
 
           <div className="flex items-center justify-between text-sm text-neutral pt-4 border-t border-neutral-light">
-          
             <span className="text-accent font-semibold group-hover:gap-2 flex items-center transition-all">
               View Details
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

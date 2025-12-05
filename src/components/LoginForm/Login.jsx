@@ -46,7 +46,7 @@ const Login = () => {
         email: "user@test.com",
         role: "user", // IMPORTANT: Add role
       });
-      navigate("/dashboard");
+      navigate("/users/dashboard");
     } else {
       alert("Invalid credentials");
     }

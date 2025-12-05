@@ -26,7 +26,7 @@ const Register = () => {
     };
 
     login(newUser);
-    navigate("/dashboard");
+    navigate("/users/dashboard");
   };
 
   const handleKeepBrowsing = () => {

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TrackMyOrder = () => {
-  return (
-    <div>TrackMyOrder</div>
-  )
-}
+  return <div>TrackMyOrder</div>;
+};
 
-export default TrackMyOrder
+export default TrackMyOrder;

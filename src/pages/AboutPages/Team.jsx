@@ -1,6 +1,6 @@
 // Team.jsx - Component file
-import React from 'react';
-import { TEAM_CONTENT } from '../../data/teamData';
+import React from "react";
+import { TEAM_CONTENT } from "../../data/teamData";
 
 // Pure presentational component for team member card
 const LeaderCard = ({ leader, onViewProfile }) => {
@@ -43,7 +43,7 @@ const LeaderCard = ({ leader, onViewProfile }) => {
             loading="lazy"
           />
         )}
-        
+
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <div className="inline-block bg-white/20 backdrop-blur-md rounded-lg px-4 py-2 border border-white/30 shadow-lg">
             <h3 className="text-xl font-bold text-white drop-shadow-lg leading-tight">
@@ -58,19 +58,17 @@ const LeaderCard = ({ leader, onViewProfile }) => {
 
       {/* Text Section */}
       <div className="p-6">
-        <p className="text-neutral leading-relaxed">
-          {leader.description}
-        </p>
+        <p className="text-neutral leading-relaxed">{leader.description}</p>
       </div>
     </article>
   );
 };
 
 // Main Team component
-const Team = ({ 
+const Team = ({
   leaders = TEAM_CONTENT.leadership.members,
   onViewProfile,
-  onJoinTeam
+  onJoinTeam,
 }) => {
   const handleJoinTeam = () => {
     console.log(`Navigate to: ${TEAM_CONTENT.joinTeam.buttonLink}`);
@@ -100,16 +98,19 @@ const Team = ({
           <h2 className="text-4xl font-bold text-primary mb-3">
             {TEAM_CONTENT.leadership.heading}
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full" aria-hidden="true"></div>
+          <div
+            className="w-24 h-1 bg-accent mx-auto rounded-full"
+            aria-hidden="true"
+          ></div>
         </div>
 
-        <div 
+        <div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
           role="list"
         >
           {leaders.map((leader) => (
-            <LeaderCard 
-              key={leader.id} 
+            <LeaderCard
+              key={leader.id}
               leader={leader}
               onViewProfile={onViewProfile}
             />
@@ -125,7 +126,7 @@ const Team = ({
         <p className="text-lg text-neutral-light mb-6 max-w-2xl mx-auto">
           {TEAM_CONTENT.joinTeam.description}
         </p>
-        <button 
+        <button
           onClick={handleJoinTeam}
           className="px-8 py-4 bg-accent hover:bg-accent-light text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg"
         >

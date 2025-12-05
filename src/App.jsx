@@ -17,11 +17,16 @@ import Dashboard from "./pages/UserPages/Dashboard";
 import TrackMyOrder from "./pages/UserPages/TrackMyOrder";
 import MyProfile from "./pages/UserPages/MyProfile";
 import MyOrder from "./pages/UserPages/MyOrder";
+import AdminLayout from "./layout/AdminLayout";
+import AdminDashboard from "./pages/AdminPages/AdminDashboard";
+import ManageCars from "./pages/AdminPages/ManageCars";
+import ManageOrders from "./pages/AdminPages/ManageOrders";
+import ManageUsers from "./pages/AdminPages/ManageUsers";
 
 const App = () => {
   return (
     <Routes>
-      {/* Routes WITH Layout (Navbar + Footer) */}
+      {/* Public routes WITH Layout (Navbar + Footer) */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/newCars" element={<NewCars />} />
@@ -36,16 +41,26 @@ const App = () => {
           <Route path="press" element={<Press />} />
         </Route>
 
-        {/* Protected routes - USE <Route> NOT <Dashboard> */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+        {/* Protected USER routes */}
+        <Route element={<ProtectedRoute allowedRoles={["user", "admin"]} />}>
+          <Route path="/users/dashboard" element={<Dashboard />} />
           <Route path="/trackOrder" element={<TrackMyOrder />} />
           <Route path="/myProfile" element={<MyProfile />} />
           <Route path="/myOrders" element={<MyOrder />} />
         </Route>
       </Route>
 
-      {/* Routes WITHOUT Layout (no Navbar/Footer) */}
+      {/* Protected ADMIN routes (separate layout, no public navbar) */}
+      <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="cars" element={<ManageCars />} />
+          <Route path="orders" element={<ManageOrders />} />
+          <Route path="users" element={<ManageUsers />} />
+        </Route>
+      </Route>
+
+      {/* Auth routes WITHOUT Layout (no Navbar/Footer) */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>

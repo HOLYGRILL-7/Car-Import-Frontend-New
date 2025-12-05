@@ -1,6 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
-import { PRESS_CONTENT } from '../../data/teamData';
+import React from "react";
+import { useState } from "react";
+import { PRESS_CONTENT } from "../../data/teamData";
 
 // Pure presentational component for news card
 const NewsCard = ({ item, onReadMore }) => {
@@ -45,21 +45,26 @@ const NewsCard = ({ item, onReadMore }) => {
           <span className="font-semibold text-accent">{item.source}</span>
           <time dateTime={item.date}>{item.displayDate}</time>
         </div>
-        
+
         <h3 className="text-xl font-bold text-primary line-clamp-2">
           {item.title}
         </h3>
-        
+
         <p className="text-neutral leading-relaxed line-clamp-2">
           {item.excerpt}
         </p>
 
-        <button 
+        <button
           className="text-accent font-semibold hover:underline flex items-center gap-2 group"
           aria-label={`Read more about ${item.title}`}
         >
           Read More
-          <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+          <span
+            className="group-hover:translate-x-1 transition-transform"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </button>
       </div>
     </article>
@@ -67,11 +72,11 @@ const NewsCard = ({ item, onReadMore }) => {
 };
 
 // Main Press component
-const Press = ({ 
+const Press = ({
   newsItems = PRESS_CONTENT.newsItems,
   onReadMore,
   onViewAll,
-  onMediaKitDownload
+  onMediaKitDownload,
 }) => {
   const handleViewAll = () => {
     console.log(`Navigate to: ${PRESS_CONTENT.viewAllButton.link}`);
@@ -79,7 +84,9 @@ const Press = ({
   };
 
   const handleMediaKitDownload = () => {
-    console.log(`Download media kit: ${PRESS_CONTENT.mediaContact.mediaKitUrl}`);
+    console.log(
+      `Download media kit: ${PRESS_CONTENT.mediaContact.mediaKitUrl}`,
+    );
     if (onMediaKitDownload) onMediaKitDownload();
   };
 
@@ -100,22 +107,18 @@ const Press = ({
       </header>
 
       {/* News Grid */}
-      <section 
+      <section
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         aria-label="Recent press releases"
       >
         {newsItems.map((item) => (
-          <NewsCard 
-            key={item.id} 
-            item={item}
-            onReadMore={onReadMore}
-          />
+          <NewsCard key={item.id} item={item} onReadMore={onReadMore} />
         ))}
       </section>
 
       {/* All Press Releases Button */}
       <div className="text-center mt-12">
-        <button 
+        <button
           onClick={handleViewAll}
           className="px-8 py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all transform hover:scale-105"
         >
@@ -138,7 +141,7 @@ const Press = ({
           >
             {PRESS_CONTENT.mediaContact.email}
           </button>
-          <button 
+          <button
             onClick={handleMediaKitDownload}
             className="px-8 py-4 bg-white text-primary font-bold rounded-xl hover:scale-105 transition-transform shadow-lg"
           >

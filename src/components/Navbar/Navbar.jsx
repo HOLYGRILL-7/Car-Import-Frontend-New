@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import AuthSection from "./AuthSection";
 import { useAuth } from "../../context/useAuth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
-  const { isLoggedIn, user, logout, isAdmin } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isHomePage = location.pathname === "/";
+
+  const parts = location.pathname.split("/");
+  const isUsersPage = parts[1] === "users";
 
   const handleLogout = () => {
     logout();
@@ -26,10 +29,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  if (isLoggedIn() && isAdmin()) {
-    return null;
-  }
 
   return (
     <nav
@@ -47,12 +46,28 @@ const Navbar = () => {
       <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <Logo />
-          <NavLinks />
+          <NavLinks />  
           <AuthSection
-            isLoggedIn={isLoggedIn()}
+            isUserPath={isUsersPage}
             onLogout={handleLogout}
             user={user}
           />
+          {isHomePage && (
+            <div className="flex gap-2 text-lg font-semibold">
+              <Link
+                to="/login"
+                className="text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-all"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="bg-secondary hover:bg-secondary-dark text-white px-5 py-2 rounded-lg transition-all" // Red register button
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>

@@ -1,7 +1,8 @@
 export const footerData = {
   company: {
     logo: "/assets/Logo/logoWhite.png",
-    description: "Your trusted partner for new and used cars. Quality vehicles at competitive prices.",
+    description:
+      "Your trusted partner for new and used cars. Quality vehicles at competitive prices.",
   },
   quickLinks: [
     { id: 1, name: "Home", to: "/" },

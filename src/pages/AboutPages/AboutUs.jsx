@@ -7,23 +7,28 @@ const AboutUs = () => {
 
   const isActiveTab = (itemPath) => {
     if (location.pathname === itemPath) return true;
-    if (itemPath !== "/about" && location.pathname.startsWith(itemPath)) return true;
+    if (itemPath !== "/about" && location.pathname.startsWith(itemPath))
+      return true;
     return false;
   };
 
   const getTabClasses = (itemPath) => {
-    const baseClasses = "py-4 px-2 border-b-2 transition-colors whitespace-nowrap font-medium";
+    const baseClasses =
+      "py-4 px-2 border-b-2 transition-colors whitespace-nowrap font-medium";
     const activeClasses = "border-accent text-accent font-semibold";
-    const inactiveClasses = "border-transparent text-neutral hover:text-primary hover:border-neutral";
-    
+    const inactiveClasses =
+      "border-transparent text-neutral hover:text-primary hover:border-neutral";
+
     return `${baseClasses} ${isActiveTab(itemPath) ? activeClasses : inactiveClasses}`;
   };
 
   const getButtonClasses = (isPrimary) => {
-    const baseClasses = "px-8 py-4 font-bold rounded-xl shadow-lg transition-all";
-    const primaryClasses = "bg-accent hover:bg-accent-light text-white transform hover:scale-105";
+    const baseClasses =
+      "px-8 py-4 font-bold rounded-xl shadow-lg transition-all";
+    const primaryClasses =
+      "bg-accent hover:bg-accent-light text-white transform hover:scale-105";
     const secondaryClasses = "bg-white text-primary hover:scale-105";
-    
+
     return `${baseClasses} ${isPrimary ? primaryClasses : secondaryClasses}`;
   };
 
@@ -33,7 +38,9 @@ const AboutUs = () => {
       <div className="bg-gradient-to-br from-primary via-[#1e3a5f] to-primary-dark text-white pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold">{aboutHeader.title}</h1>
+            <h1 className="text-5xl md:text-6xl font-bold">
+              {aboutHeader.title}
+            </h1>
             <p className="text-xl text-neutral-cream">{aboutHeader.subtitle}</p>
           </div>
         </div>
