@@ -46,28 +46,13 @@ const Navbar = () => {
       <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <Logo />
-          <NavLinks />  
+          <NavLinks />
           <AuthSection
             isUserPath={isUsersPage}
             onLogout={handleLogout}
             user={user}
           />
-          {isHomePage && (
-            <div className="flex gap-2 text-lg font-semibold">
-              <Link
-                to="/login"
-                className="text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-all"
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="bg-secondary hover:bg-secondary-dark text-white px-5 py-2 rounded-lg transition-all" // Red register button
-              >
-                Register
-              </Link>
-            </div>
-          )}
+         
         </div>
       </div>
     </nav>
