@@ -50,7 +50,7 @@ const Navbar = () => {
           <NavLinks />
           <AuthSection
             isLoggedIn={isLoggedIn()}
-            onlogout={handleLogout}
+            onLogout={handleLogout}
             user={user}
           />
         </div>
